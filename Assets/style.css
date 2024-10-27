@@ -17,10 +17,12 @@ header {
     background-image: url('banner.png');
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
+    padding: 50px 0;
     text-align: center;
     position: relative;
+    width: 100%;
 }
+
 header::before {
     content: '';
     position: absolute;
