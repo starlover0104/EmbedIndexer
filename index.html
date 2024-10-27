@@ -6,112 +6,22 @@
     <title>Search for Starlover's Embeds</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="Assets/icon.png" type="image/x-icon">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #121212;
-            color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-image: url('https://www.transparenttextures.com/patterns/paperbag.png');
-            background-size: cover;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        header {
-            background-image: url('https://www.publicdomainpictures.net/pictures/40000/nahled/space-stars.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            color: #8b0000;
-            font-size: 3.5rem;
-            margin: 0;
-            position: relative;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        input[type="text"], button, input[type="checkbox"] {
-            font-size: 1.1rem;
-            border: none;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 8px;
-            background-color: #1e1e1e;
-            color: #f0f0f0;
-        }
-        input[type="text"] {
-            border: 2px solid #8b0000;
-        }
-        button {
-            background-color: #8b0000;
-            color: #fff;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #a52a2a;
-        }
-        #fileStatus {
-            color: #8be9fd;
-            font-weight: bold;
-            margin: 20px;
-        }
-        #results {
-            margin: 20px;
-        }
-        pre {
-            background: #1e1e1e;
-            border: 2px solid #8b0000;
-            padding: 10px;
-            border-radius: 8px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            cursor: pointer;
-        }
-        .highlight {
-            background-color: #8b0000;
-            color: #f0f0f0;
-            font-weight: bold;
-        }
-        .footer-image {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Starlover's Embed Archive Searcher</h1>
     </header>
     <div class="container">
-        <img src="Assets/heart.png" alt="Cute Heart" width="100" class="footer-image" />
-        
         <div class="section">
             <label>
-                <input type="checkbox" name="fileType" value="Assets/Movies.txt"> Movies
+                <input type="checkbox" name="fileType" value="Assets/Source/Movies.txt"> Movies
             </label>
             <label>
-                <input type="checkbox" name="fileType" value="Assets/TvSeries.txt"> TV Series
+                <input type="checkbox" name="fileType" value="Assets/Source/TvSeries.txt"> TV Series
             </label>
             <label>
-                <input type="checkbox" name="fileType" value="Assets/AnimeS.txt"> Anime Series
+                <input type="checkbox" name="fileType" value="Assets/Source/AnimeS.txt"> Anime Series
             </label>
         </div>
         
@@ -166,7 +76,7 @@
             resultsDiv.innerHTML = '';
 
             if (!content) {
-                resultsDiv.innerHTML = '<p>No content available. Downtime may be on going</p>';
+                resultsDiv.innerHTML = '<p>No content available. Downtime may be ongoing</p>';
                 return;
             }
 
