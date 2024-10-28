@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starlover's Embed Archive Searcher</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC&display=swap" rel="stylesheet">
     <link rel="icon" href="Assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Assets/style.css">
 </head>
@@ -12,6 +12,27 @@
     <header>
         <h1>Starlover's Embed Archive Searcher</h1>
     </header>
+
+    <div class="updates-section">
+        <div class="updates-container">
+            <h2>Live Updates</h2>
+            <div class="updates-scroll">
+                <div class="update-item">
+                    <div class="update-date">October 28, 2024</div>
+                    <div class="update-content">🔧 Broken links in Movies category removed</div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">October 27, 2024</div>
+                    <div class="update-content">✨ Upcoming removal's of broken links</div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">October 27, 2024</div>
+                    <div class="update-content">🐛 Official website release with the new styling</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="section">
             <label>
@@ -105,12 +126,23 @@
         }
 
         function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Text copied to clipboard');
-            }).catch(err => {
-                console.error('Error copying text: ', err);
-            });
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    alert('Text copied to clipboard');
+                })
+                .catch(err => {
+                    console.error('Error copying text: ', err);
+                });
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchQuery');
+            searchInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    loadAndSearch();
+                }
+            });
+        });
     </script>
 </body>
 </html>
