@@ -8,11 +8,7 @@ body {
     background-image: url('https://www.transparenttextures.com/patterns/paperbag.png');
     background-size: cover;
 }
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+
 header {
     background-image: url('banner.png');
     background-size: cover;
@@ -21,8 +17,8 @@ header {
     text-align: center;
     position: relative;
     width: 100%;
-    margin: 0 0 30px 0;
-} 
+    margin: 0;
+}
 
 header::before {
     content: '';
@@ -36,15 +32,94 @@ header::before {
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
-    color: #8b0000;
+    font-family: 'Bona Nova SC', serif;
+    color: #8be9fd;
     font-size: 3rem;
     margin: 0;
     position: relative;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: -1px -1px 0 #000000,  
+                 1px -1px 0 #000000,
+                 -1px 1px 0 #000000,
+                 1px 1px 0 #000000,
+                 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
-input[type="text"], button, input[type="checkbox"] {
+
+.updates-section {
+    background-color: #1e1e1e;
+    border-bottom: 2px solid #8b0000;
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+
+.updates-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.updates-container h2 {
+    color: #8b0000;
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 15px 0;
+    font-size: 1.5rem;
+}
+
+.updates-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #8b0000 #1e1e1e;
+}
+
+.updates-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.updates-scroll::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.updates-scroll::-webkit-scrollbar-thumb {
+    background-color: #8b0000;
+    border-radius: 3px;
+}
+
+.update-item {
+    min-width: 200px;
+    padding: 10px;
+    background-color: #252525;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.2s ease;
+}
+
+.update-item:hover {
+    transform: translateY(-2px);
+}
+
+.update-date {
+    color: #8be9fd;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.update-content {
+    color: #f0f0f0;
+    font-size: 0.95rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input[type="text"], 
+button, 
+input[type="checkbox"] {
     font-size: 1.1rem;
     border: none;
     padding: 10px;
@@ -53,25 +128,32 @@ input[type="text"], button, input[type="checkbox"] {
     background-color: #1e1e1e;
     color: #f0f0f0;
 }
+
 input[type="text"] {
     border: 2px solid #8b0000;
 }
+
 button {
     background-color: #8b0000;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
 button:hover {
     background-color: #a52a2a;
 }
+
 #fileStatus {
     color: #8be9fd;
     font-weight: bold;
     margin: 20px;
 }
+
 #results {
     margin: 20px;
 }
+
 pre {
     background: #1e1e1e;
     border: 2px solid #8b0000;
@@ -80,9 +162,33 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
+
+pre:hover {
+    transform: translateX(5px);
+}
+
 .highlight {
     background-color: #8b0000;
     color: #f0f0f0;
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .updates-container {
+        padding: 0 10px;
+    }
+    
+    .update-item {
+        min-width: 180px;
+    }
 }
